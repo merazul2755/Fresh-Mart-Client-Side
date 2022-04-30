@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,6 +16,9 @@ const Header = () => {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to='/login' >Login</Nav.Link>
           </Nav>
         </NavbarCollapse>
         </Container>
