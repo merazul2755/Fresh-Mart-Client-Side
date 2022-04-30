@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand='sm' bg="primary" variant="dark">
-        <Container className="">
+        <Container>
         <NavbarToggle aria-controls="navbarScroll" data-bs-targert='navbarScroll'></NavbarToggle>
         <NavbarCollapse id="navbarScroll">
           <Navbar.Brand href="#home">Fresh Mart</Navbar.Brand>
