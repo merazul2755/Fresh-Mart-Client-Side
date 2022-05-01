@@ -4,19 +4,24 @@ import "../Login/Login.css";
 
 const SignUp = () => {
 
-    const handleForm = (e) =>{
+    const handleSignUp = (e) =>{
         e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name,email, password);
     }
   return (
     <div>
       <div className="login-form container mb-5">
-        <form onSubmit={handleForm} className="m-auto bg-white shadow-lg rounded-3 mt-4">
+        <form onSubmit={handleSignUp} className="m-auto bg-white shadow-lg rounded-3 mt-4">
           <h3 className="text-center p-3 text-danger">Sign Up</h3>
 
           <div className="form-group m-4">
             <label>Name</label>
             <input
               type="text"
+              name="name"
               className="form-control"
               placeholder="Enter Name"
               required
@@ -27,6 +32,7 @@ const SignUp = () => {
             <label>Email</label>
             <input
               type="email"
+              name="email"
               className="form-control"
               placeholder="Enter email"
               required
@@ -37,6 +43,7 @@ const SignUp = () => {
             <label>Password</label>
             <input
               type="password"
+              name="password"
               className="form-control"
               placeholder="Enter password"
               required
@@ -61,7 +68,7 @@ const SignUp = () => {
                 <Link to="/login">
                   <strong>Log In</strong>
                 </Link>
-              </small>{" "}
+              </small>
             </p>
           </div>
 
