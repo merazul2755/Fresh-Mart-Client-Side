@@ -7,7 +7,7 @@ const Footer = () => {
          d-flex flex-column justify-content-end align-items-center mt-5 pt-3">
       <p className="text-white">
         <small className="fw-lighter text-white">
-          Sowad &#169;{currentYear} All rights reserved.
+          Sowad &#169; {currentYear} All rights reserved.
         </small>
       </p>
     </div>
