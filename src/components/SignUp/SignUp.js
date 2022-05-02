@@ -5,32 +5,34 @@ import auth from "../../firebase.init";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import Loading from "../Loading/Loading";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import Image from '../../image/google.png'
+import Image from "../../image/google.png";
 
 const SignUp = () => {
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [signInWithGoogle, loading] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, loading, user1] = useSignInWithGoogle(auth);
+  const [updateProfile] = useUpdateProfile(auth);
   const navigate = useNavigate();
 
-  const handleSignUp = async(e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const confirmPassword = e.target.confirmPassword.value;
 
-    if (password === confirmPassword) {
-      await createUserWithEmailAndPassword(email, password);
-      toast("Account Create Successfully");
-      navigate("/login");
-    } else {
-      toast("Password Not Matched");
-    }
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    toast("Account Create Successfully");
   };
+
+  if (user || user1) {
+    navigate("/blogs");
+  }
 
   const handleGoogleSign = () => {
     if (loading) {
@@ -47,6 +49,16 @@ const SignUp = () => {
         >
           <h3 className="text-center p-3 text-danger">Sign Up</h3>
 
+          <div className="form-group m-4">
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              className="form-control"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
           <div className="form-group m-4">
             <label>Email</label>
             <input
@@ -69,20 +81,6 @@ const SignUp = () => {
             />
           </div>
 
-          <div className="form-group m-4">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              className="form-control"
-              placeholder="Confirm Password"
-              required
-            />
-          </div>
-
-          <div className="form-group m-4">
-            <p>Forget Password</p>
-          </div>
 
           <div className="text-center d-lg-flex justify-content-between align-items-center">
             <button
@@ -104,11 +102,20 @@ const SignUp = () => {
         </form>
         <div className=" mb-4 text-center bg-secondary rounded-3 text-white">
           <p className="pt-3">Or Sign In With:</p>
-         <div className="text-center d-flex justify-content-center"> 
-            <button onClick={handleGoogleSign} className="btn bg-light mb-4 text-center mt-3 d-flex align-items-center  rounded-3">
-            <img width={30} className='rounded-circle me-2' src={Image} alt="" />
-            <p className="mb-0">Sign In With Google</p>
-          </button></div>
+          <div className="text-center d-flex justify-content-center">
+            <button
+              onClick={handleGoogleSign}
+              className="btn bg-light mb-4 text-center mt-3 d-flex align-items-center  rounded-3"
+            >
+              <img
+                width={30}
+                className="rounded-circle me-2"
+                src={Image}
+                alt=""
+              />
+              <p className="mb-0">Sign In With Google</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>

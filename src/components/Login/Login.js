@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import Image from "../../image/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, loading1] = useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+    auth
+  );
   
   const navigate = useNavigate();
+  if (user) {
+    navigate("/blogs");
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,13 +32,11 @@ const Login = () => {
     if (error) {
       toast(error.message);
     }
-    if (user) {
-      navigate("/blogs");
-    }
+    
   };
 
   const handleGoogleSign = () => {
-    if (loading) {
+    if (loading1) {
       return <Loading></Loading>;
     }
     signInWithGoogle();
@@ -68,7 +73,10 @@ const Login = () => {
           </div>
 
           <div className="form-group m-4">
-            <p>Forget Password</p>
+            <p className="btn" onClick={async () => {
+          await sendPasswordResetEmail(email);
+          alert('Sent email');
+        }}>Forget Password</p>
           </div>
 
           <div className="text-center d-lg-flex justify-content-between align-items-center">
