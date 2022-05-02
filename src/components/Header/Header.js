@@ -39,7 +39,7 @@ const Header = () => {
               {user ? (
                 <div className="d-flex align-items-center">
                   <p className="me-2 text-light">{user ? user.displayName : ''}</p>
-                  <button onClick={()=>signOut(auth)} className="btn btn-light fw-bold text-danger ">Sign Out</button>
+                  <button onClick={()=>signOut(auth)} className="btn btn-light fw-bold text-danger ">LogOut</button>
                 </div>
               ) : (
                 

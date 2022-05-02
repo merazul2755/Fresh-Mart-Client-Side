@@ -6,7 +6,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
-import { sendPasswordResetEmail } from "firebase/auth";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -73,10 +73,10 @@ const Login = () => {
           </div>
 
           <div className="form-group m-4">
-            <p className="btn" onClick={async () => {
+            <p className="btn text-danger" onClick={async () => {
           await sendPasswordResetEmail(email);
           alert('Sent email');
-        }}>Forget Password</p>
+        }}>Forget Password?</p>
           </div>
 
           <div className="text-center d-lg-flex justify-content-between align-items-center">
@@ -87,7 +87,7 @@ const Login = () => {
               Sign in
             </button>
 
-            <p className="me-4">
+            <p className="me-4 mb-0">
               <small>
                 Haven't an Account?{" "}
                 <Link to="/signup">
