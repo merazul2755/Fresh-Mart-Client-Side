@@ -1,32 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Login/Login.css";
+import auth from "../../firebase.init";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Loading from "../Loading/Loading";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 const SignUp = () => {
+  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, loading] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
 
     const handleSignUp = (e) =>{
         e.preventDefault();
-        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name,email, password);
+        const confirmPassword = e.target.confirmPassword.value;
+
+        if(password=== confirmPassword){
+          createUserWithEmailAndPassword(email,password);
+          toast("Account Create Successfully");
+          navigate('/login');
+        }else{
+          toast('Password Not Matched')
+        }
+    }
+
+    const handleGoogleSign = () =>{
+      if (loading) {
+        return <Loading></Loading>
+      }
+      signInWithGoogle();
     }
   return (
     <div>
       <div className="login-form container mb-5">
         <form onSubmit={handleSignUp} className="m-auto bg-white shadow-lg rounded-3 mt-4">
           <h3 className="text-center p-3 text-danger">Sign Up</h3>
-
-          <div className="form-group m-4">
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Enter Name"
-              required
-            />
-          </div>
 
           <div className="form-group m-4">
             <label>Email</label>
@@ -51,6 +62,17 @@ const SignUp = () => {
           </div>
 
           <div className="form-group m-4">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              className="form-control"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <div className="form-group m-4">
             <p>Forget Password</p>
           </div>
 
@@ -62,7 +84,7 @@ const SignUp = () => {
               Sign Up
             </button>
 
-            <p className="me-4">
+            <p className="me-4 m-0">
               <small>
                 Have an Account?{" "}
                 <Link to="/login">
@@ -72,12 +94,12 @@ const SignUp = () => {
             </p>
           </div>
 
-          <div className=" mt-2 mb-4 bg-secondary text-center rounded-3 text-white">
+        </form>
+          <div className=" mb-4 bg-secondary text-center rounded-3 text-white">
             <p className="pt-3">Or Sign In With:</p>
-            <button className="mb-4 me-3">Google</button>
+            <button onClick={handleGoogleSign} className="mb-4 me-3">Google</button>
             <button className="mb-4">Google</button>
           </div>
-        </form>
       </div>
     </div>
   );
