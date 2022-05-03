@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "name":"Moshur Dal (Deshi)",
+        "des": "These skinless, red lentils are small and round. They are fast-cooking and don't need to be soaked. They are often cooked, mashed and added to curries and soups. Masoor is a very versatile lentil and has a creamy texture and warming flavor.",
+        "price": 130,
+        "quantity": 10,
+        "suplier":"Fresh",
+        "img":"https://ibb.co/R97bngV"
+    },
+    {
+        "id":2,
+        "name":"Shagor Kola (Banana Sagor)",
+        "des": " Shagor Kola (Banana Sagor) 4 pcs",
+        "price": 50,
+        "quantity":100,
+        "suplier":"Local",
+        "img":"https://ibb.co/SfStkPt"
+    },
+    {
+        "id":3,
+        "name":"Basmati Rice (Boiled)",
+        "des": "Basmati Rice (Boiled) 25kg",
+        "price": 2000,
+        "quantity":10,
+        "suplier":"Fresh",
+        "img":"https://ibb.co/fSHnvPw"
+    },
+    {
+        "id":4,
+        "name":"Arzish Black Kalmi Safawi Dates",
+        "des": "Arzish Black Kalmi Safawi Dates 500gm",
+        "price": 580,
+        "quantity": 20,
+        "suplier":"indian",
+        "img":"https://ibb.co/dKy45c9"
+    },
+    {
+        "id":5,
+        "name":"Guava Premium (± 50 gm)",
+        "des": "Guava is a tropical fruit rich in high-profile nutrients. Thai guavas are generally the size of a softball with apple green skin that can range from bumpy to smooth. The flesh is white with pale yellow seeds and tends to be drier than the pink type of guavas. Thai guavas are only mildly sweet and have very little fragrance. The crunchy flesh and hard seeds are both edible. Guavas come in two broad groups divided by the color of their flesh: pink and white. Thai guavas are a group of guavas within the white category that include a number of varieties. Thai Guava Guava is very helpful for those who want to lose weight without compromising their intake of proteins, vitamins and fiber. Guava is very high in roughage and rich in vitamins, proteins and minerals Adding a medium-sized guava to your lunch and you will not feel hungry again until the evening.",
+        "price": 80,
+        "quantity": 30,
+        "suplier":"Local",
+        "img":"https://ibb.co/hW8JcLw"
+    },
+    {
+        "id":6,
+        "name":"Malta (Special Offer) ± 50 gm",
+        "des":"Malta, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals. Malta is loaded with vitamin C and vitamin B complex. It is a round-shaped, medium-sized fruit, weighting an average of 145.8 gm. It has a rough-surfaced orange ringed with a segment of around 9.67 centimetres and a sweet-tasting juice content of around 33.7 per cent. The fruit is often used to make processed juice, jam, jelly and marmalade.",
+        "price": 170,
+        "quantity":50,
+        "suplier":"Local",
+        "img":"https://ibb.co/hWqqsJz"
+    }
+]

@@ -13,14 +13,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle, loading1] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, loading1, user1] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(
     auth
   );
   
   const navigate = useNavigate();
-  if (user) {
-    navigate("/blogs");
+  if (user || user1) {
+    navigate("/");
   }
 
   const handleLogin = (e) => {

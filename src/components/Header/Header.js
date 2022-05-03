@@ -26,9 +26,9 @@ const Header = () => {
             data-bs-targert="navbarScroll"
           ></NavbarToggle>
           <NavbarCollapse id="navbarScroll">
-            <Navbar.Brand href="#home">Fresh Mart</Navbar.Brand>
+            <Navbar.Brand as={Link} to='/'>Fresh Mart</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link as={Link} to='/'>Home</Nav.Link>
               <Nav.Link href="#features">Features</Nav.Link>
               <Nav.Link as={Link} to="/blogs">
                 Blogs
@@ -43,7 +43,7 @@ const Header = () => {
                 </div>
               ) : (
                 
-                <Nav.Link className="btn btn-light text-primary" as={Link} to="/login">
+                <Nav.Link className="btn btn-light text-primary fw-bold" as={Link} to="/login">
                   Login
                 </Nav.Link>
               )}
