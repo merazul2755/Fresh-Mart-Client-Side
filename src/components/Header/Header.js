@@ -29,7 +29,7 @@ const Header = () => {
             <Navbar.Brand as={Link} to='/'>Fresh Mart</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link as={Link} to='/'>Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link as={Link} to='/items'>Items</Nav.Link>
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>

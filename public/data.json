@@ -6,7 +6,7 @@
         "price": 130,
         "quantity": 10,
         "suplier":"Fresh",
-        "img":"https://ibb.co/R97bngV"
+        "img":"https://i.ibb.co/XbVLBWv/moshur-dal-deshi-1-kg.webp"
     },
     {
         "id":2,
@@ -15,7 +15,7 @@
         "price": 50,
         "quantity":100,
         "suplier":"Local",
-        "img":"https://ibb.co/SfStkPt"
+        "img":"https://i.ibb.co/3RKpx7p/shagor-kola-banana-sagor-4-pcs.webp"
     },
     {
         "id":3,
@@ -24,7 +24,7 @@
         "price": 2000,
         "quantity":10,
         "suplier":"Fresh",
-        "img":"https://ibb.co/fSHnvPw"
+        "img":"https://i.ibb.co/sPq6HMY/basmati-rice-boiled-25-kg.webp"
     },
     {
         "id":4,
@@ -33,7 +33,7 @@
         "price": 580,
         "quantity": 20,
         "suplier":"indian",
-        "img":"https://ibb.co/dKy45c9"
+        "img":"https://i.ibb.co/NYz2y3h/arzish-black-kalmi-safawi-dates-500-gm.webp"
     },
     {
         "id":5,
@@ -42,7 +42,7 @@
         "price": 80,
         "quantity": 30,
         "suplier":"Local",
-        "img":"https://ibb.co/hW8JcLw"
+        "img":"https://i.ibb.co/vPz6hVR/guava-premium-50-gm-1-kg.webp"
     },
     {
         "id":6,
@@ -51,6 +51,6 @@
         "price": 170,
         "quantity":50,
         "suplier":"Local",
-        "img":"https://ibb.co/hWqqsJz"
+        "img":"https://i.ibb.co/qsZZB3Q/malta-50-gm-1-kg.webp"
     }
 ]

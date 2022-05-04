@@ -1,0 +1,17 @@
+import { useEffect, useState } from "react";
+
+const useProducts = () => {
+    const [product, setProduct] = useState([]);
+  console.log(product);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/items")
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, []);
+
+  return [product, setProduct];
+
+}
+
+export default useProducts;
