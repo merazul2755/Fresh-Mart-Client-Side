@@ -1,4 +1,5 @@
-import { Card, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import image from "../../image/Banner.jpg";
 import Products from "../Products/Products";
@@ -20,6 +21,9 @@ const Home = () => {
           <Products key={product._id} product={product}></Products>
         ))}
       </Row>
+      <div className=" container text-center">
+        <Link to='/manage' className="btn btn-secondary mt-5">Manage Inventories</Link>
+      </div>
       </div>
     </div>
   );

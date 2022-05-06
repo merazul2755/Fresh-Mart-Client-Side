@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Home from './components/Home/Home';
 import Items from './components/Items/Items';
 import Login from './components/Login/Login';
+import Manage from './components/Manage/Manage';
 import SignUp from './components/SignUp/SignUp';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route> 
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/manage' element={<Manage></Manage>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
