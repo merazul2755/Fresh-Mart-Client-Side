@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "../../image/google.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -17,12 +17,10 @@ const Login = () => {
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(
     auth
   );
-  
-  const navigate = useNavigate();
-  if (user || user1) {
-    navigate("/");
-  }
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
@@ -41,6 +39,11 @@ const Login = () => {
     }
     signInWithGoogle();
   };
+
+  const navigate = useNavigate();
+  if (user || user1) {
+    navigate(from, {replace: true});
+  }
   return (
     <div>
       <div className="login-form container mb-5">

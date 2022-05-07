@@ -29,7 +29,13 @@ const Header = () => {
             <Navbar.Brand as={Link} to='/'>Fresh Mart</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link as={Link} to='/'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/items'>Items</Nav.Link>
+              {user ? <Nav>
+                <Nav.Link as={Link} to='/manage'>Manage Items</Nav.Link>
+                <Nav.Link as={Link} to='/addItem'>Add Item</Nav.Link>
+                <Nav.Link as={Link} to='/myItems'>My Items</Nav.Link>
+
+              </Nav> : ''}
+              
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
@@ -37,7 +43,7 @@ const Header = () => {
             <Nav>
 
               {user ? (
-                <div className="d-flex align-items-center">
+                <div className="d-flex ">
                   <p className="me-2 text-light">{user ? user.displayName : ''}</p>
                   <button onClick={()=>signOut(auth)} className="btn btn-light fw-bold text-danger ">LogOut</button>
                 </div>
