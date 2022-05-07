@@ -9,6 +9,7 @@ const Home = () => {
 
   return (
     <div>
+      
       <div className="image">
         <img className="img-fluid w-100" src={image} alt="" />
       </div>
@@ -21,8 +22,9 @@ const Home = () => {
           <Products key={product._id} product={product}></Products>
         ))}
       </Row>
+
       <div className=" container text-center">
-        <Link to='/manage' className="btn btn-secondary mt-5">Manage Inventories</Link>
+        <Link  to='/manage' className="btn btn-secondary mt-5 ps-5 pe-5">Manage Inventories</Link>
       </div>
       </div>
     </div>
