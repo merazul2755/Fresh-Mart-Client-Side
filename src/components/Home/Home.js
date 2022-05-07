@@ -18,7 +18,7 @@ const Home = () => {
       <div>
         <h1 className="text-center mt-5">Inventory Items</h1>
       <Row xs={1} md={2} lg={3} className="g-4 container m-auto">
-        {product.map((product) => (
+        {product.slice(0,6).map((product) => (
           <Products key={product._id} product={product}></Products>
         ))}
       </Row>

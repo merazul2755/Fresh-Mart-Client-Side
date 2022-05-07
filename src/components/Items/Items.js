@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Items = () => {
   const { id } = useParams();
@@ -101,6 +101,9 @@ const Items = () => {
           
         </Card.Body>
       </Card>
+      <div className=" container text-center">
+        <Link  to='/manage' className="btn btn-secondary mt-5 ps-5 pe-5">Manage Inventories</Link>
+      </div>
     </>
   );
 };
