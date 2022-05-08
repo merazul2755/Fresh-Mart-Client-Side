@@ -31,6 +31,17 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      <div className="container p-5 border shadow mt-5 border-3">
+        <h1>SHOP Min 400Tk Get 4% Discount</h1>
+        <h5>Conditions:</h5>
+        <ul><li>Maximum 200Tk Discount/Order</li>
+        <li>Voucher discount will be applied on Non-Offer Items only</li>
+        <li>This voucher is not applicable on any Soyabean Oil/Selected Rice Items/HappyHour Items</li>
+        <li>Cart Total needs to be Tk400+ without any offer Item/s</li>
+        <li>Customers are allowed to use only 1 voucher for each order.</li>
+        <li className="text-danger fw-bold">This voucher is not applicable on any Soyabean Oil/Selected Rice Items/Beef, L.Sugar, Baby Foods</li></ul>
+      </div>
     </div>
   );
 };
