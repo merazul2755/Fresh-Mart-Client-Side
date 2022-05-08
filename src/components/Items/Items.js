@@ -11,7 +11,7 @@ const Items = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
@@ -26,7 +26,7 @@ const Items = () => {
       parseInt(event.target.restock.value) + parseInt(item.quantity);
     const restock = { quantity };
 
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -43,7 +43,7 @@ const Items = () => {
 
   const handleDelivered = () => {
     const quantity = parseInt(item.quantity) - 1;
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

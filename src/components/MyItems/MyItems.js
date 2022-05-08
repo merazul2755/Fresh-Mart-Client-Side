@@ -12,7 +12,7 @@ const MyItems = () => {
 
   useEffect(() => {
     const email = user.email;
-    fetch(`http://localhost:5000/order?email=${email}`)
+    fetch(`https://hidden-sierra-80840.herokuapp.com/order?email=${email}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [user]);
@@ -21,7 +21,7 @@ const MyItems = () => {
     const procced = window.confirm("Are sure want to delete?");
 
     if (procced) {
-      const url = `http://localhost:5000/items/${id}`;
+      const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -12,7 +12,7 @@ const Order = () => {
   const [myItem, setMyItem] = useState();
 
   useEffect(() => {
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyItem(data));
@@ -32,7 +32,7 @@ const Order = () => {
       address: e.target.address.value,
       phone: e.target.phone.value,
     };
-    const url = `http://localhost:5000/order`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/order`;
     fetch(url, {
       method: "POST",
       headers: {

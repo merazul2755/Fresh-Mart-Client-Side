@@ -16,7 +16,7 @@ const Manage = () => {
       const procced = window.confirm('Are sure want to delete?')
 
       if(procced){
-        const url = `http://localhost:5000/items/${id}`;
+        const url = `https://hidden-sierra-80840.herokuapp.com/items/${id}`;
         fetch(url,{
             method: 'DELETE'
         })

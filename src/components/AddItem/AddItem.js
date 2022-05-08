@@ -14,7 +14,7 @@ const AddItem = () => {
 
     const addProduct = {name,des,price,quantity,suplier,img};
 
-    const url = `http://localhost:5000/items`;
+    const url = `https://hidden-sierra-80840.herokuapp.com/items`;
     fetch(url, {
       method: "POST",
       headers: {
