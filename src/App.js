@@ -10,6 +10,7 @@ import Items from './components/Items/Items';
 import Login from './components/Login/Login';
 import Manage from './components/Manage/Manage';
 import MyItems from './components/MyItems/MyItems';
+import Order from './components/Order/Order';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import SignUp from './components/SignUp/SignUp';
 
@@ -23,6 +24,11 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route> 
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <Order></Order>
+          </RequireAuth>
+        }></Route>
         <Route path='/manage' element={
           <RequireAuth>
             <Manage></Manage>

@@ -3,9 +3,14 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
+import Loading from '../Loading/Loading'
 
 const Manage = () => {
   const [product, setProduct] = useProducts();
+
+  if (product.length === 0) {
+    return <Loading></Loading>;
+  }
 
   const handleDelete = (id) =>{
       const procced = window.confirm('Are sure want to delete?')

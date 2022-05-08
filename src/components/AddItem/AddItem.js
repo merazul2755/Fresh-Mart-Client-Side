@@ -9,10 +9,10 @@ const AddItem = () => {
     const des = event.target.des.value;
     const price = event.target.price.value;
     const quantity = event.target.quantity.value;
-    const seller = event.target.seller.value;
+    const suplier = event.target.seller.value;
     const img = event.target.img.value;
 
-    const addProduct = {name,des,price,quantity,seller,img};
+    const addProduct = {name,des,price,quantity,suplier,img};
 
     const url = `http://localhost:5000/items`;
     fetch(url, {

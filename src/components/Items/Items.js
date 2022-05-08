@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Loading from '../Loading/Loading'
+
 
 const Items = () => {
   const { id } = useParams();
+  
   const [item, setItem] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url = `http://localhost:5000/items/${id}`;
@@ -12,6 +16,10 @@ const Items = () => {
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id]);
+
+  if(item ===0){
+    return <Loading></Loading>
+  }
 
   const handleRestockQuantity = (event) => {
     const quantity =
@@ -50,6 +58,15 @@ const Items = () => {
       });
       window.location.reload();
   };
+
+  const hadleToOrder =(id)=>{
+    navigate(`/checkout/${id}`)
+  }
+
+
+
+  
+
 
   return (
     <>
@@ -94,9 +111,14 @@ const Items = () => {
           {
             item.quantity === 0 ? <button className="btn btn-danger w-100">
             Sold Out
-          </button>: <button onClick={handleDelivered} className="btn btn-success w-100">
-            Delivered
+          </button>: 
+          <div className="d-flex justify-content-between"><button onClick={handleDelivered} className="btn btn-success ps-4 pe-4">
+          Delivered
+        </button>
+        <button onClick={()=>hadleToOrder(id)} className="btn btn-outline-danger ps-4 pe-4 ">
+            Check Out
           </button>
+          </div>
           }
           
         </Card.Body>

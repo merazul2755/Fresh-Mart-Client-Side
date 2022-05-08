@@ -43,10 +43,10 @@ const Header = () => {
             <Nav>
 
               {user ? (
-                <div className="d-flex ">
-                  <p className="me-2 text-light">{user ? user.displayName : ''}</p>
+                <Nav className="d-flex align-items-center">
+                  <Nav.Link className="me-2 text-light">{user ? user.displayName : ''}</Nav.Link>
                   <button onClick={()=>signOut(auth)} className="btn btn-light fw-bold text-danger ">LogOut</button>
-                </div>
+                </Nav>
               ) : (
                 
                 <Nav.Link className="btn btn-light text-primary fw-bold" as={Link} to="/login">
